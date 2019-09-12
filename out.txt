@@ -1,0 +1,1274 @@
+reading done
+Label= 2
+Next Line!
+st= (~10?0:1)
+Hypothesis:10	 one-edge:0	 zero-edge:1
+Label= 3
+Next Line!
+st= (~9?0:2)
+Hypothesis:9	 one-edge:0	 zero-edge:2
+Label= 4
+Next Line!
+st= (~8?0:3)
+Hypothesis:8	 one-edge:0	 zero-edge:3
+Label= 5
+Next Line!
+st= (~7?0:4)
+Hypothesis:7	 one-edge:0	 zero-edge:4
+Label= 6
+Next Line!
+st= (~7?0:2)
+Hypothesis:7	 one-edge:0	 zero-edge:2
+Label= 7
+Next Line!
+st= (~6?0:6)
+Hypothesis:6	 one-edge:0	 zero-edge:6
+Label= 8
+Next Line!
+st= (~5?5:7)
+Hypothesis:5	 one-edge:5	 zero-edge:7
+Label= 9
+Next Line!
+st= (~6?0:5)
+Hypothesis:6	 one-edge:0	 zero-edge:5
+Label= 10
+Next Line!
+st= (~11?0:1)
+Hypothesis:11	 one-edge:0	 zero-edge:1
+Label= 11
+Next Line!
+st= (~10?0:10)
+Hypothesis:10	 one-edge:0	 zero-edge:10
+Label= 12
+Next Line!
+st= (~8?11:10)
+Hypothesis:8	 one-edge:11	 zero-edge:10
+Label= 13
+Next Line!
+st= (~7?0:12)
+Hypothesis:7	 one-edge:0	 zero-edge:12
+Label= 14
+Next Line!
+st= (~5?9:13)
+Hypothesis:5	 one-edge:9	 zero-edge:13
+Label= 15
+Next Line!
+st= (~4?8:14)
+Hypothesis:4	 one-edge:8	 zero-edge:14
+Label= 16
+Next Line!
+st= (~3?0:15)
+Hypothesis:3	 one-edge:0	 zero-edge:15
+Label= 17
+Next Line!
+st= (~10?10:1)
+Hypothesis:10	 one-edge:10	 zero-edge:1
+Label= 18
+Next Line!
+st= (~9?0:17)
+Hypothesis:9	 one-edge:0	 zero-edge:17
+Label= 19
+Next Line!
+st= (~8?0:18)
+Hypothesis:8	 one-edge:0	 zero-edge:18
+Label= 20
+Next Line!
+st= (~7?0:19)
+Hypothesis:7	 one-edge:0	 zero-edge:19
+Label= 21
+Next Line!
+st= (~6?5:20)
+Hypothesis:6	 one-edge:5	 zero-edge:20
+Label= 22
+Next Line!
+st= (~8?3:2)
+Hypothesis:8	 one-edge:3	 zero-edge:2
+Label= 23
+Next Line!
+st= (~7?0:22)
+Hypothesis:7	 one-edge:0	 zero-edge:22
+Label= 24
+Next Line!
+st= (~7?0:10)
+Hypothesis:7	 one-edge:0	 zero-edge:10
+Label= 25
+Next Line!
+st= (~6?23:24)
+Hypothesis:6	 one-edge:23	 zero-edge:24
+Label= 26
+Next Line!
+st= (~5?0:25)
+Hypothesis:5	 one-edge:0	 zero-edge:25
+Label= 27
+Next Line!
+st= (~4?21:26)
+Hypothesis:4	 one-edge:21	 zero-edge:26
+Label= 28
+Next Line!
+st= (~9?0:10)
+Hypothesis:9	 one-edge:0	 zero-edge:10
+Label= 29
+Next Line!
+st= (~8?0:28)
+Hypothesis:8	 one-edge:0	 zero-edge:28
+Label= 30
+Next Line!
+st= (~7?0:29)
+Hypothesis:7	 one-edge:0	 zero-edge:29
+Label= 31
+Next Line!
+st= (~9?11:10)
+Hypothesis:9	 one-edge:11	 zero-edge:10
+Label= 32
+Next Line!
+st= (~8?31:10)
+Hypothesis:8	 one-edge:31	 zero-edge:10
+Label= 33
+Next Line!
+st= (~7?0:32)
+Hypothesis:7	 one-edge:0	 zero-edge:32
+Label= 34
+Next Line!
+st= (~6?30:33)
+Hypothesis:6	 one-edge:30	 zero-edge:33
+Label= 35
+Next Line!
+st= (~9?10:1)
+Hypothesis:9	 one-edge:10	 zero-edge:1
+Label= 36
+Next Line!
+st= (~8?2:35)
+Hypothesis:8	 one-edge:2	 zero-edge:35
+Label= 37
+Next Line!
+st= (~7?0:36)
+Hypothesis:7	 one-edge:0	 zero-edge:36
+Label= 38
+Next Line!
+st= (~8?0:11)
+Hypothesis:8	 one-edge:0	 zero-edge:11
+Label= 39
+Next Line!
+st= (~9?17:2)
+Hypothesis:9	 one-edge:17	 zero-edge:2
+Label= 40
+Next Line!
+st= (~8?39:11)
+Hypothesis:8	 one-edge:39	 zero-edge:11
+Label= 41
+Next Line!
+st= (~7?38:40)
+Hypothesis:7	 one-edge:38	 zero-edge:40
+Label= 42
+Next Line!
+st= (~6?37:41)
+Hypothesis:6	 one-edge:37	 zero-edge:41
+Label= 43
+Next Line!
+st= (~5?34:42)
+Hypothesis:5	 one-edge:34	 zero-edge:42
+Label= 44
+Next Line!
+st= (~9?0:11)
+Hypothesis:9	 one-edge:0	 zero-edge:11
+Label= 45
+Next Line!
+st= (~9?2:10)
+Hypothesis:9	 one-edge:2	 zero-edge:10
+Label= 46
+Next Line!
+st= (~8?45:10)
+Hypothesis:8	 one-edge:45	 zero-edge:10
+Label= 47
+Next Line!
+st= (~7?44:46)
+Hypothesis:7	 one-edge:44	 zero-edge:46
+Label= 48
+Next Line!
+st= (~6?5:47)
+Hypothesis:6	 one-edge:5	 zero-edge:47
+Label= 49
+Next Line!
+st= (~9?0:1)
+Hypothesis:9	 one-edge:0	 zero-edge:1
+Label= 50
+Next Line!
+st= (~7?2:49)
+Hypothesis:7	 one-edge:2	 zero-edge:49
+Label= 51
+Next Line!
+st= (~6?0:50)
+Hypothesis:6	 one-edge:0	 zero-edge:50
+Label= 52
+Next Line!
+st= (~5?48:51)
+Hypothesis:5	 one-edge:48	 zero-edge:51
+Label= 53
+Next Line!
+st= (~4?43:52)
+Hypothesis:4	 one-edge:43	 zero-edge:52
+Label= 54
+Next Line!
+st= (~3?27:53)
+Hypothesis:3	 one-edge:27	 zero-edge:53
+Label= 55
+Next Line!
+st= (~2?16:54)
+Hypothesis:2	 one-edge:16	 zero-edge:54
+Label= 56
+Next Line!
+st= (~7?0:3)
+Hypothesis:7	 one-edge:0	 zero-edge:3
+Label= 57
+Next Line!
+st= (~8?0:2)
+Hypothesis:8	 one-edge:0	 zero-edge:2
+Label= 58
+Next Line!
+st= (~11?1:1)
+Hypothesis:11	 one-edge:1	 zero-edge:1
+Label= 59
+Next Line!
+st= (~10?0:58)
+Hypothesis:10	 one-edge:0	 zero-edge:58
+Label= 60
+Next Line!
+st= (~8?11:59)
+Hypothesis:8	 one-edge:11	 zero-edge:59
+Label= 61
+Next Line!
+st= (~7?57:60)
+Hypothesis:7	 one-edge:57	 zero-edge:60
+Label= 62
+Next Line!
+st= (~6?56:61)
+Hypothesis:6	 one-edge:56	 zero-edge:61
+Label= 63
+Next Line!
+st= (~5?0:62)
+Hypothesis:5	 one-edge:0	 zero-edge:62
+Label= 64
+Next Line!
+st= (~9?2:58)
+Hypothesis:9	 one-edge:2	 zero-edge:58
+Label= 65
+Next Line!
+st= (~8?0:64)
+Hypothesis:8	 one-edge:0	 zero-edge:64
+Label= 66
+Next Line!
+st= (~6?0:65)
+Hypothesis:6	 one-edge:0	 zero-edge:65
+Label= 67
+Next Line!
+st= (~8?0:49)
+Hypothesis:8	 one-edge:0	 zero-edge:49
+Label= 68
+Next Line!
+st= (~7?0:67)
+Hypothesis:7	 one-edge:0	 zero-edge:67
+Label= 69
+Next Line!
+st= (~8?3:28)
+Hypothesis:8	 one-edge:3	 zero-edge:28
+Label= 70
+Next Line!
+st= (~7?0:69)
+Hypothesis:7	 one-edge:0	 zero-edge:69
+Label= 71
+Next Line!
+st= (~6?68:70)
+Hypothesis:6	 one-edge:68	 zero-edge:70
+Label= 72
+Next Line!
+st= (~5?66:71)
+Hypothesis:5	 one-edge:66	 zero-edge:71
+Label= 73
+Next Line!
+st= (~4?63:72)
+Hypothesis:4	 one-edge:63	 zero-edge:72
+Label= 74
+Next Line!
+st= (~9?11:58)
+Hypothesis:9	 one-edge:11	 zero-edge:58
+Label= 75
+Next Line!
+st= (~8?0:74)
+Hypothesis:8	 one-edge:0	 zero-edge:74
+Label= 76
+Next Line!
+st= (~7?0:75)
+Hypothesis:7	 one-edge:0	 zero-edge:75
+Label= 77
+Next Line!
+st= (~9?2:2)
+Hypothesis:9	 one-edge:2	 zero-edge:2
+Label= 78
+Next Line!
+st= (~8?0:77)
+Hypothesis:8	 one-edge:0	 zero-edge:77
+Label= 79
+Next Line!
+st= (~6?76:78)
+Hypothesis:6	 one-edge:76	 zero-edge:78
+Label= 80
+Next Line!
+st= (~8?0:59)
+Hypothesis:8	 one-edge:0	 zero-edge:59
+Label= 81
+Next Line!
+st= (~8?11:1)
+Hypothesis:8	 one-edge:11	 zero-edge:1
+Label= 82
+Next Line!
+st= (~7?80:81)
+Hypothesis:7	 one-edge:80	 zero-edge:81
+Label= 83
+Next Line!
+st= (~6?82:78)
+Hypothesis:6	 one-edge:82	 zero-edge:78
+Label= 84
+Next Line!
+st= (~5?79:83)
+Hypothesis:5	 one-edge:79	 zero-edge:83
+Label= 85
+Next Line!
+st= (~7?0:28)
+Hypothesis:7	 one-edge:0	 zero-edge:28
+Label= 86
+Next Line!
+st= (~8?0:1)
+Hypothesis:8	 one-edge:0	 zero-edge:1
+Label= 87
+Next Line!
+st= (~7?0:86)
+Hypothesis:7	 one-edge:0	 zero-edge:86
+Label= 88
+Next Line!
+st= (~6?85:87)
+Hypothesis:6	 one-edge:85	 zero-edge:87
+Label= 89
+Next Line!
+st= (~9?10:2)
+Hypothesis:9	 one-edge:10	 zero-edge:2
+Label= 90
+Next Line!
+st= (~8?77:89)
+Hypothesis:8	 one-edge:77	 zero-edge:89
+Label= 91
+Next Line!
+st= (~8?74:11)
+Hypothesis:8	 one-edge:74	 zero-edge:11
+Label= 92
+Next Line!
+st= (~9?2:1)
+Hypothesis:9	 one-edge:2	 zero-edge:1
+Label= 93
+Next Line!
+st= (~8?0:92)
+Hypothesis:8	 one-edge:0	 zero-edge:92
+Label= 94
+Next Line!
+st= (~7?91:93)
+Hypothesis:7	 one-edge:91	 zero-edge:93
+Label= 95
+Next Line!
+st= (~6?90:94)
+Hypothesis:6	 one-edge:90	 zero-edge:94
+Label= 96
+Next Line!
+st= (~5?88:95)
+Hypothesis:5	 one-edge:88	 zero-edge:95
+Label= 97
+Next Line!
+st= (~4?84:96)
+Hypothesis:4	 one-edge:84	 zero-edge:96
+Label= 98
+Next Line!
+st= (~3?73:97)
+Hypothesis:3	 one-edge:73	 zero-edge:97
+Label= 99
+Next Line!
+st= (~6?0:19)
+Hypothesis:6	 one-edge:0	 zero-edge:19
+Label= 100
+Next Line!
+st= (~8?18:10)
+Hypothesis:8	 one-edge:18	 zero-edge:10
+Label= 101
+Next Line!
+st= (~7?22:100)
+Hypothesis:7	 one-edge:22	 zero-edge:100
+Label= 102
+Next Line!
+st= (~6?101:24)
+Hypothesis:6	 one-edge:101	 zero-edge:24
+Label= 103
+Next Line!
+st= (~5?99:102)
+Hypothesis:5	 one-edge:99	 zero-edge:102
+Label= 104
+Next Line!
+st= (~9?0:58)
+Hypothesis:9	 one-edge:0	 zero-edge:58
+Label= 105
+Next Line!
+st= (~8?0:104)
+Hypothesis:8	 one-edge:0	 zero-edge:104
+Label= 106
+Next Line!
+st= (~8?3:11)
+Hypothesis:8	 one-edge:3	 zero-edge:11
+Label= 107
+Next Line!
+st= (~7?105:106)
+Hypothesis:7	 one-edge:105	 zero-edge:106
+Label= 108
+Next Line!
+st= (~8?2:11)
+Hypothesis:8	 one-edge:2	 zero-edge:11
+Label= 109
+Next Line!
+st= (~6?107:108)
+Hypothesis:6	 one-edge:107	 zero-edge:108
+Label= 110
+Next Line!
+st= (~8?0:10)
+Hypothesis:8	 one-edge:0	 zero-edge:10
+Label= 111
+Next Line!
+st= (~7?12:110)
+Hypothesis:7	 one-edge:12	 zero-edge:110
+Label= 112
+Next Line!
+st= (~10?1:10)
+Hypothesis:10	 one-edge:1	 zero-edge:10
+Label= 113
+Next Line!
+st= (~9?1:1)
+Hypothesis:9	 one-edge:1	 zero-edge:1
+Label= 114
+Next Line!
+st= (~8?112:113)
+Hypothesis:8	 one-edge:112	 zero-edge:113
+Label= 115
+Next Line!
+st= (~6?111:114)
+Hypothesis:6	 one-edge:111	 zero-edge:114
+Label= 116
+Next Line!
+st= (~5?109:115)
+Hypothesis:5	 one-edge:109	 zero-edge:115
+Label= 117
+Next Line!
+st= (~4?103:116)
+Hypothesis:4	 one-edge:103	 zero-edge:116
+Label= 118
+Next Line!
+st= (~9?0:112)
+Hypothesis:9	 one-edge:0	 zero-edge:112
+Label= 119
+Next Line!
+st= (~6?93:118)
+Hypothesis:6	 one-edge:93	 zero-edge:118
+Label= 120
+Next Line!
+st= (~7?3:4)
+Hypothesis:7	 one-edge:3	 zero-edge:4
+Label= 121
+Next Line!
+st= (~7?110:3)
+Hypothesis:7	 one-edge:110	 zero-edge:3
+Label= 122
+Next Line!
+st= (~6?120:121)
+Hypothesis:6	 one-edge:120	 zero-edge:121
+Label= 123
+Next Line!
+st= (~5?119:122)
+Hypothesis:5	 one-edge:119	 zero-edge:122
+Label= 124
+Next Line!
+st= (~8?2:1)
+Hypothesis:8	 one-edge:2	 zero-edge:1
+Label= 125
+Next Line!
+st= (~7?0:124)
+Hypothesis:7	 one-edge:0	 zero-edge:124
+Label= 126
+Next Line!
+st= (~6?57:125)
+Hypothesis:6	 one-edge:57	 zero-edge:125
+Label= 127
+Next Line!
+st= (~8?3:1)
+Hypothesis:8	 one-edge:3	 zero-edge:1
+Label= 128
+Next Line!
+st= (~8?3:10)
+Hypothesis:8	 one-edge:3	 zero-edge:10
+Label= 129
+Next Line!
+st= (~7?127:128)
+Hypothesis:7	 one-edge:127	 zero-edge:128
+Label= 130
+Next Line!
+st= (~5?126:129)
+Hypothesis:5	 one-edge:126	 zero-edge:129
+Label= 131
+Next Line!
+st= (~4?123:130)
+Hypothesis:4	 one-edge:123	 zero-edge:130
+Label= 132
+Next Line!
+st= (~3?117:131)
+Hypothesis:3	 one-edge:117	 zero-edge:131
+Label= 133
+Next Line!
+st= (~2?98:132)
+Hypothesis:2	 one-edge:98	 zero-edge:132
+Label= 134
+Next Line!
+st= (~1?55:133)
+Hypothesis:1	 one-edge:55	 zero-edge:133
+Second for loop!
+st= (~10?0:1)
+Second for loop!
+st= (~9?0:2)
+Second for loop!
+st= (~8?0:3)
+Second for loop!
+st= (~7?0:4)
+Second for loop!
+st= (~7?0:2)
+Second for loop!
+st= (~6?0:6)
+Second for loop!
+st= (~5?5:7)
+Second for loop!
+st= (~6?0:5)
+Second for loop!
+st= (~11?0:1)
+Second for loop!
+st= (~10?0:10)
+Second for loop!
+st= (~8?11:10)
+Second for loop!
+st= (~7?0:12)
+Second for loop!
+st= (~5?9:13)
+Second for loop!
+st= (~4?8:14)
+Second for loop!
+st= (~3?0:15)
+Second for loop!
+st= (~10?10:1)
+Second for loop!
+st= (~9?0:17)
+Second for loop!
+st= (~8?0:18)
+Second for loop!
+st= (~7?0:19)
+Second for loop!
+st= (~6?5:20)
+Second for loop!
+st= (~8?3:2)
+Second for loop!
+st= (~7?0:22)
+Second for loop!
+st= (~7?0:10)
+Second for loop!
+st= (~6?23:24)
+Second for loop!
+st= (~5?0:25)
+Second for loop!
+st= (~4?21:26)
+Second for loop!
+st= (~9?0:10)
+Second for loop!
+st= (~8?0:28)
+Second for loop!
+st= (~7?0:29)
+Second for loop!
+st= (~9?11:10)
+Second for loop!
+st= (~8?31:10)
+Second for loop!
+st= (~7?0:32)
+Second for loop!
+st= (~6?30:33)
+Second for loop!
+st= (~9?10:1)
+Second for loop!
+st= (~8?2:35)
+Second for loop!
+st= (~7?0:36)
+Second for loop!
+st= (~8?0:11)
+Second for loop!
+st= (~9?17:2)
+Second for loop!
+st= (~8?39:11)
+Second for loop!
+st= (~7?38:40)
+Second for loop!
+st= (~6?37:41)
+Second for loop!
+st= (~5?34:42)
+Second for loop!
+st= (~9?0:11)
+Second for loop!
+st= (~9?2:10)
+Second for loop!
+st= (~8?45:10)
+Second for loop!
+st= (~7?44:46)
+Second for loop!
+st= (~6?5:47)
+Second for loop!
+st= (~9?0:1)
+Second for loop!
+st= (~7?2:49)
+Second for loop!
+st= (~6?0:50)
+Second for loop!
+st= (~5?48:51)
+Second for loop!
+st= (~4?43:52)
+Second for loop!
+st= (~3?27:53)
+Second for loop!
+st= (~2?16:54)
+Second for loop!
+st= (~7?0:3)
+Second for loop!
+st= (~8?0:2)
+Second for loop!
+st= (~11?1:1)
+Second for loop!
+st= (~10?0:58)
+Second for loop!
+st= (~8?11:59)
+Second for loop!
+st= (~7?57:60)
+Second for loop!
+st= (~6?56:61)
+Second for loop!
+st= (~5?0:62)
+Second for loop!
+st= (~9?2:58)
+Second for loop!
+st= (~8?0:64)
+Second for loop!
+st= (~6?0:65)
+Second for loop!
+st= (~8?0:49)
+Second for loop!
+st= (~7?0:67)
+Second for loop!
+st= (~8?3:28)
+Second for loop!
+st= (~7?0:69)
+Second for loop!
+st= (~6?68:70)
+Second for loop!
+st= (~5?66:71)
+Second for loop!
+st= (~4?63:72)
+Second for loop!
+st= (~9?11:58)
+Second for loop!
+st= (~8?0:74)
+Second for loop!
+st= (~7?0:75)
+Second for loop!
+st= (~9?2:2)
+Second for loop!
+st= (~8?0:77)
+Second for loop!
+st= (~6?76:78)
+Second for loop!
+st= (~8?0:59)
+Second for loop!
+st= (~8?11:1)
+Second for loop!
+st= (~7?80:81)
+Second for loop!
+st= (~6?82:78)
+Second for loop!
+st= (~5?79:83)
+Second for loop!
+st= (~7?0:28)
+Second for loop!
+st= (~8?0:1)
+Second for loop!
+st= (~7?0:86)
+Second for loop!
+st= (~6?85:87)
+Second for loop!
+st= (~9?10:2)
+Second for loop!
+st= (~8?77:89)
+Second for loop!
+st= (~8?74:11)
+Second for loop!
+st= (~9?2:1)
+Second for loop!
+st= (~8?0:92)
+Second for loop!
+st= (~7?91:93)
+Second for loop!
+st= (~6?90:94)
+Second for loop!
+st= (~5?88:95)
+Second for loop!
+st= (~4?84:96)
+Second for loop!
+st= (~3?73:97)
+Second for loop!
+st= (~6?0:19)
+Second for loop!
+st= (~8?18:10)
+Second for loop!
+st= (~7?22:100)
+Second for loop!
+st= (~6?101:24)
+Second for loop!
+st= (~5?99:102)
+Second for loop!
+st= (~9?0:58)
+Second for loop!
+st= (~8?0:104)
+Second for loop!
+st= (~8?3:11)
+Second for loop!
+st= (~7?105:106)
+Second for loop!
+st= (~8?2:11)
+Second for loop!
+st= (~6?107:108)
+Second for loop!
+st= (~8?0:10)
+Second for loop!
+st= (~7?12:110)
+Second for loop!
+st= (~10?1:10)
+Second for loop!
+st= (~9?1:1)
+Second for loop!
+st= (~8?112:113)
+Second for loop!
+st= (~6?111:114)
+Second for loop!
+st= (~5?109:115)
+Second for loop!
+st= (~4?103:116)
+Second for loop!
+st= (~9?0:112)
+Second for loop!
+st= (~6?93:118)
+Second for loop!
+st= (~7?3:4)
+Second for loop!
+st= (~7?110:3)
+Second for loop!
+st= (~6?120:121)
+Second for loop!
+st= (~5?119:122)
+Second for loop!
+st= (~8?2:1)
+Second for loop!
+st= (~7?0:124)
+Second for loop!
+st= (~6?57:125)
+Second for loop!
+st= (~8?3:1)
+Second for loop!
+st= (~8?3:10)
+Second for loop!
+st= (~7?127:128)
+Second for loop!
+st= (~5?126:129)
+Second for loop!
+st= (~4?123:130)
+Second for loop!
+st= (~3?117:131)
+Second for loop!
+st= (~2?98:132)
+Second for loop!
+st= (~1?55:133)
+Size of branch_instructions:133
+number_of_samples==133
+number_of_base_hypotheses=11
+###### Last Instruction number:	134
+Node index: 1	One-edge: 55	Zero-edge: 133
+Node 1 for branch instruction #134 was added.
+Node index: 2	One-edge: 16	Zero-edge: 54
+Node 2 for branch instruction #55 was added.
+Node index: 3	One-edge: 0	Zero-edge: 15
+Node 3 for branch instruction #16 was added.
+one-child is zero and recursion stops.
+Node index: 4	One-edge: 8	Zero-edge: 14
+Node 4 for branch instruction #15 was added.
+Node index: 5	One-edge: 5	Zero-edge: 7
+Node 5 for branch instruction #8 was added.
+Node index: 7	One-edge: 0	Zero-edge: 4
+Node 7 for branch instruction #5 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 3
+Node 8 for branch instruction #4 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 2
+Node 9 for branch instruction #3 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 1
+Node 10 for branch instruction #2 was added.
+one-child is zero and recursion stops.
+ZERO-EDGE to the sink node was added. From branch instruction #2 , node #10
+Node index: 6	One-edge: 0	Zero-edge: 6
+Node 6 for branch instruction #7 was added.
+one-child is zero and recursion stops.
+Node index: 7	One-edge: 0	Zero-edge: 2
+Node 7 for branch instruction #6 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 5	One-edge: 9	Zero-edge: 13
+Node 5 for branch instruction #14 was added.
+Node index: 6	One-edge: 0	Zero-edge: 5
+Node 6 for branch instruction #9 was added.
+one-child is zero and recursion stops.
+Node index: 7	One-edge: 0	Zero-edge: 4
+EDGE ADDED FOR THE OBSERVED NODE #7 FROM BRANCH INSTRUCTION NUMBER #5
+Node index: 7	One-edge: 0	Zero-edge: 12
+Node 7 for branch instruction #13 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 11	Zero-edge: 10
+Node 8 for branch instruction #12 was added.
+Node index: 10	One-edge: 0	Zero-edge: 10
+Node 10 for branch instruction #11 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 0	Zero-edge: 1
+Node 11 for branch instruction #10 was added.
+one-child is zero and recursion stops.
+ZERO-EDGE to the sink node was added. From branch instruction #10 , node #11
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 3	One-edge: 27	Zero-edge: 53
+Node 3 for branch instruction #54 was added.
+Node index: 4	One-edge: 21	Zero-edge: 26
+Node 4 for branch instruction #27 was added.
+Node index: 6	One-edge: 5	Zero-edge: 20
+Node 6 for branch instruction #21 was added.
+Node index: 7	One-edge: 0	Zero-edge: 4
+EDGE ADDED FOR THE OBSERVED NODE #7 FROM BRANCH INSTRUCTION NUMBER #5
+Node index: 7	One-edge: 0	Zero-edge: 19
+Node 7 for branch instruction #20 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 18
+Node 8 for branch instruction #19 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 17
+Node 9 for branch instruction #18 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 10	Zero-edge: 1
+Node 10 for branch instruction #17 was added.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+ZERO-EDGE to the sink node was added. From branch instruction #17 , node #10
+Node index: 5	One-edge: 0	Zero-edge: 25
+Node 5 for branch instruction #26 was added.
+one-child is zero and recursion stops.
+Node index: 6	One-edge: 23	Zero-edge: 24
+Node 6 for branch instruction #25 was added.
+Node index: 7	One-edge: 0	Zero-edge: 22
+Node 7 for branch instruction #23 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 3	Zero-edge: 2
+Node 8 for branch instruction #22 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 7	One-edge: 0	Zero-edge: 10
+Node 7 for branch instruction #24 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 4	One-edge: 43	Zero-edge: 52
+Node 4 for branch instruction #53 was added.
+Node index: 5	One-edge: 34	Zero-edge: 42
+Node 5 for branch instruction #43 was added.
+Node index: 6	One-edge: 30	Zero-edge: 33
+Node 6 for branch instruction #34 was added.
+Node index: 7	One-edge: 0	Zero-edge: 29
+Node 7 for branch instruction #30 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 28
+Node 8 for branch instruction #29 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 10
+Node 9 for branch instruction #28 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 7	One-edge: 0	Zero-edge: 32
+Node 7 for branch instruction #33 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 31	Zero-edge: 10
+Node 8 for branch instruction #32 was added.
+Node index: 9	One-edge: 11	Zero-edge: 10
+Node 9 for branch instruction #31 was added.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 6	One-edge: 37	Zero-edge: 41
+Node 6 for branch instruction #42 was added.
+Node index: 7	One-edge: 0	Zero-edge: 36
+Node 7 for branch instruction #37 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 2	Zero-edge: 35
+Node 8 for branch instruction #36 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 9	One-edge: 10	Zero-edge: 1
+Node 9 for branch instruction #35 was added.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+ZERO-EDGE to the sink node was added. From branch instruction #35 , node #9
+Node index: 7	One-edge: 38	Zero-edge: 40
+Node 7 for branch instruction #41 was added.
+Node index: 8	One-edge: 0	Zero-edge: 11
+Node 8 for branch instruction #38 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 8	One-edge: 39	Zero-edge: 11
+Node 8 for branch instruction #40 was added.
+Node index: 9	One-edge: 17	Zero-edge: 2
+Node 9 for branch instruction #39 was added.
+Node index: 10	One-edge: 10	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #17
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 5	One-edge: 48	Zero-edge: 51
+Node 5 for branch instruction #52 was added.
+Node index: 6	One-edge: 5	Zero-edge: 47
+Node 6 for branch instruction #48 was added.
+Node index: 7	One-edge: 0	Zero-edge: 4
+EDGE ADDED FOR THE OBSERVED NODE #7 FROM BRANCH INSTRUCTION NUMBER #5
+Node index: 7	One-edge: 44	Zero-edge: 46
+Node 7 for branch instruction #47 was added.
+Node index: 9	One-edge: 0	Zero-edge: 11
+Node 9 for branch instruction #44 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 8	One-edge: 45	Zero-edge: 10
+Node 8 for branch instruction #46 was added.
+Node index: 9	One-edge: 2	Zero-edge: 10
+Node 9 for branch instruction #45 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 6	One-edge: 0	Zero-edge: 50
+Node 6 for branch instruction #51 was added.
+one-child is zero and recursion stops.
+Node index: 7	One-edge: 2	Zero-edge: 49
+Node 7 for branch instruction #50 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 9	One-edge: 0	Zero-edge: 1
+Node 9 for branch instruction #49 was added.
+one-child is zero and recursion stops.
+ZERO-EDGE to the sink node was added. From branch instruction #49 , node #9
+Node index: 2	One-edge: 98	Zero-edge: 132
+Node 2 for branch instruction #133 was added.
+Node index: 3	One-edge: 73	Zero-edge: 97
+Node 3 for branch instruction #98 was added.
+Node index: 4	One-edge: 63	Zero-edge: 72
+Node 4 for branch instruction #73 was added.
+Node index: 5	One-edge: 0	Zero-edge: 62
+Node 5 for branch instruction #63 was added.
+one-child is zero and recursion stops.
+Node index: 6	One-edge: 56	Zero-edge: 61
+Node 6 for branch instruction #62 was added.
+Node index: 7	One-edge: 0	Zero-edge: 3
+Node 7 for branch instruction #56 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 7	One-edge: 57	Zero-edge: 60
+Node 7 for branch instruction #61 was added.
+Node index: 8	One-edge: 0	Zero-edge: 2
+Node 8 for branch instruction #57 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 8	One-edge: 11	Zero-edge: 59
+Node 8 for branch instruction #60 was added.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 10	One-edge: 0	Zero-edge: 58
+Node 10 for branch instruction #59 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 1	Zero-edge: 1
+Node 11 for branch instruction #58 was added.
+ONE-EDGE to the sink node was added. From branch instruction #58 , node #11
+ZERO-EDGE to the sink node was added. From branch instruction #58 , node #11
+Node index: 5	One-edge: 66	Zero-edge: 71
+Node 5 for branch instruction #72 was added.
+Node index: 6	One-edge: 0	Zero-edge: 65
+Node 6 for branch instruction #66 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 64
+Node 8 for branch instruction #65 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 2	Zero-edge: 58
+Node 9 for branch instruction #64 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 11	One-edge: 1	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #58
+Node index: 6	One-edge: 68	Zero-edge: 70
+Node 6 for branch instruction #71 was added.
+Node index: 7	One-edge: 0	Zero-edge: 67
+Node 7 for branch instruction #68 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 49
+Node 8 for branch instruction #67 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #49
+Node index: 7	One-edge: 0	Zero-edge: 69
+Node 7 for branch instruction #70 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 3	Zero-edge: 28
+Node 8 for branch instruction #69 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 9	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #28
+Node index: 4	One-edge: 84	Zero-edge: 96
+Node 4 for branch instruction #97 was added.
+Node index: 5	One-edge: 79	Zero-edge: 83
+Node 5 for branch instruction #84 was added.
+Node index: 6	One-edge: 76	Zero-edge: 78
+Node 6 for branch instruction #79 was added.
+Node index: 7	One-edge: 0	Zero-edge: 75
+Node 7 for branch instruction #76 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 74
+Node 8 for branch instruction #75 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 11	Zero-edge: 58
+Node 9 for branch instruction #74 was added.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 11	One-edge: 1	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #58
+Node index: 8	One-edge: 0	Zero-edge: 77
+Node 8 for branch instruction #78 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 2	Zero-edge: 2
+Node 9 for branch instruction #77 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 6	One-edge: 82	Zero-edge: 78
+Node 6 for branch instruction #83 was added.
+Node index: 7	One-edge: 80	Zero-edge: 81
+Node 7 for branch instruction #82 was added.
+Node index: 8	One-edge: 0	Zero-edge: 59
+Node 8 for branch instruction #80 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 0	Zero-edge: 58
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #59
+Node index: 8	One-edge: 11	Zero-edge: 1
+Node 8 for branch instruction #81 was added.
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+ZERO-EDGE to the sink node was added. From branch instruction #81 , node #8
+Node index: 8	One-edge: 0	Zero-edge: 77
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #78
+Node index: 5	One-edge: 88	Zero-edge: 95
+Node 5 for branch instruction #96 was added.
+Node index: 6	One-edge: 85	Zero-edge: 87
+Node 6 for branch instruction #88 was added.
+Node index: 7	One-edge: 0	Zero-edge: 28
+Node 7 for branch instruction #85 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #28
+Node index: 7	One-edge: 0	Zero-edge: 86
+Node 7 for branch instruction #87 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 1
+Node 8 for branch instruction #86 was added.
+one-child is zero and recursion stops.
+ZERO-EDGE to the sink node was added. From branch instruction #86 , node #8
+Node index: 6	One-edge: 90	Zero-edge: 94
+Node 6 for branch instruction #95 was added.
+Node index: 8	One-edge: 77	Zero-edge: 89
+Node 8 for branch instruction #90 was added.
+Node index: 9	One-edge: 2	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #77
+Node index: 9	One-edge: 10	Zero-edge: 2
+Node 9 for branch instruction #89 was added.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 7	One-edge: 91	Zero-edge: 93
+Node 7 for branch instruction #94 was added.
+Node index: 8	One-edge: 74	Zero-edge: 11
+Node 8 for branch instruction #91 was added.
+Node index: 9	One-edge: 11	Zero-edge: 58
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #74
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 8	One-edge: 0	Zero-edge: 92
+Node 8 for branch instruction #93 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 2	Zero-edge: 1
+Node 9 for branch instruction #92 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+ZERO-EDGE to the sink node was added. From branch instruction #92 , node #9
+Node index: 3	One-edge: 117	Zero-edge: 131
+Node 3 for branch instruction #132 was added.
+Node index: 4	One-edge: 103	Zero-edge: 116
+Node 4 for branch instruction #117 was added.
+Node index: 5	One-edge: 99	Zero-edge: 102
+Node 5 for branch instruction #103 was added.
+Node index: 6	One-edge: 0	Zero-edge: 19
+Node 6 for branch instruction #99 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 0	Zero-edge: 18
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #19
+Node index: 6	One-edge: 101	Zero-edge: 24
+Node 6 for branch instruction #102 was added.
+Node index: 7	One-edge: 22	Zero-edge: 100
+Node 7 for branch instruction #101 was added.
+Node index: 8	One-edge: 3	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #22
+Node index: 8	One-edge: 18	Zero-edge: 10
+Node 8 for branch instruction #100 was added.
+Node index: 9	One-edge: 0	Zero-edge: 17
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #18
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 7	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #7 FROM BRANCH INSTRUCTION NUMBER #24
+Node index: 5	One-edge: 109	Zero-edge: 115
+Node 5 for branch instruction #116 was added.
+Node index: 6	One-edge: 107	Zero-edge: 108
+Node 6 for branch instruction #109 was added.
+Node index: 7	One-edge: 105	Zero-edge: 106
+Node 7 for branch instruction #107 was added.
+Node index: 8	One-edge: 0	Zero-edge: 104
+Node 8 for branch instruction #105 was added.
+one-child is zero and recursion stops.
+Node index: 9	One-edge: 0	Zero-edge: 58
+Node 9 for branch instruction #104 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 1	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #58
+Node index: 8	One-edge: 3	Zero-edge: 11
+Node 8 for branch instruction #106 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 8	One-edge: 2	Zero-edge: 11
+Node 8 for branch instruction #108 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+Node index: 10	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #11
+Node index: 6	One-edge: 111	Zero-edge: 114
+Node 6 for branch instruction #115 was added.
+Node index: 7	One-edge: 12	Zero-edge: 110
+Node 7 for branch instruction #111 was added.
+Node index: 8	One-edge: 11	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #12
+Node index: 8	One-edge: 0	Zero-edge: 10
+Node 8 for branch instruction #110 was added.
+one-child is zero and recursion stops.
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 8	One-edge: 112	Zero-edge: 113
+Node 8 for branch instruction #114 was added.
+Node index: 10	One-edge: 1	Zero-edge: 10
+Node 10 for branch instruction #112 was added.
+ONE-EDGE to the sink node was added. From branch instruction #112 , node #10
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Node index: 9	One-edge: 1	Zero-edge: 1
+Node 9 for branch instruction #113 was added.
+ONE-EDGE to the sink node was added. From branch instruction #113 , node #9
+ZERO-EDGE to the sink node was added. From branch instruction #113 , node #9
+Node index: 4	One-edge: 123	Zero-edge: 130
+Node 4 for branch instruction #131 was added.
+Node index: 5	One-edge: 119	Zero-edge: 122
+Node 5 for branch instruction #123 was added.
+Node index: 6	One-edge: 93	Zero-edge: 118
+Node 6 for branch instruction #119 was added.
+Node index: 8	One-edge: 0	Zero-edge: 92
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #93
+Node index: 9	One-edge: 0	Zero-edge: 112
+Node 9 for branch instruction #118 was added.
+one-child is zero and recursion stops.
+Node index: 10	One-edge: 1	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #112
+Node index: 6	One-edge: 120	Zero-edge: 121
+Node 6 for branch instruction #122 was added.
+Node index: 7	One-edge: 3	Zero-edge: 4
+Node 7 for branch instruction #120 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 8	One-edge: 0	Zero-edge: 3
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #4
+Node index: 7	One-edge: 110	Zero-edge: 3
+Node 7 for branch instruction #121 was added.
+Node index: 8	One-edge: 0	Zero-edge: 10
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #110
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 5	One-edge: 126	Zero-edge: 129
+Node 5 for branch instruction #130 was added.
+Node index: 6	One-edge: 57	Zero-edge: 125
+Node 6 for branch instruction #126 was added.
+Node index: 8	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #8 FROM BRANCH INSTRUCTION NUMBER #57
+Node index: 7	One-edge: 0	Zero-edge: 124
+Node 7 for branch instruction #125 was added.
+one-child is zero and recursion stops.
+Node index: 8	One-edge: 2	Zero-edge: 1
+Node 8 for branch instruction #124 was added.
+Node index: 10	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #10 FROM BRANCH INSTRUCTION NUMBER #2
+ZERO-EDGE to the sink node was added. From branch instruction #124 , node #8
+Node index: 7	One-edge: 127	Zero-edge: 128
+Node 7 for branch instruction #129 was added.
+Node index: 8	One-edge: 3	Zero-edge: 1
+Node 8 for branch instruction #127 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+ZERO-EDGE to the sink node was added. From branch instruction #127 , node #8
+Node index: 8	One-edge: 3	Zero-edge: 10
+Node 8 for branch instruction #128 was added.
+Node index: 9	One-edge: 0	Zero-edge: 2
+EDGE ADDED FOR THE OBSERVED NODE #9 FROM BRANCH INSTRUCTION NUMBER #3
+Node index: 11	One-edge: 0	Zero-edge: 1
+EDGE ADDED FOR THE OBSERVED NODE #11 FROM BRANCH INSTRUCTION NUMBER #10
+Program Finished!
