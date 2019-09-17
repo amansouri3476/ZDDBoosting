@@ -19,6 +19,12 @@
 
 using namespace std;
 
+
+//NOTE: slack variables for edges are designated by beta in the algorithm draft and base hypotheses weights are denoted
+// by alpha. In this code, each edge is associated with a edge_slack_variable playing the role of beta and
+// base_hypothesis_weight represents alpha.
+
+
 struct my_node_property {
 //    double un-normalized_weight;
     //std::vector<double> contrib_h;
@@ -34,6 +40,8 @@ struct my_node_property {
 struct my_edge_property {
 //    double weight;
     int zero_one;
+
+    float edge_slack_variable;
 
     // The following set for the current case of NZDDs having one edge on each edge will reduce to a single member set.
     std::set<int> labels; // labels of edge
@@ -52,6 +60,7 @@ std::map<int, Graph::vertex_descriptor> V_global;
 
 
 map<int, vector<int>> get_input(std::string filename, std::vector<std::vector<int>>& instances, std::vector<int> & labels,  int* number_of_samples, int* number_of_base_hypotheses);
+
 void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& vertices,
         vector<Graph::vertex_descriptor>& v_sink_one, vector<Graph::vertex_descriptor>& v_sink_zero,
         map<int, vector<int>> branch_instructions, int branch_instruction_number, int parent_branch_instruction_number,
@@ -70,7 +79,7 @@ int main(int argc, char *argv[]){
 
 //    std::string filename = argv[1];
 //    std::string filename = "rofk-100-p.kf";
-    std::string filename = "small.kf";
+    std::string filename = "rofk-100-p.kf";
 
 
 
@@ -112,34 +121,14 @@ int main(int argc, char *argv[]){
     //NOTE: So we only need to add one-edge and zero-edge of the nodes in the V_sink_one_edge and V_sink_zero_edge
     // vectors. Then transform the graph to the NZDD form with a single label on each edge.
 
-    // adding the sink node
-//    auto sink_node = add_vertex(g);
-    // Adding the one-edges
-//    for (auto first = V_sink_one_edge.begin(), last = V_sink_one_edge.end(); first != last; ++first) {
-//        cout << "ONE-EDGE to the sink node was added. From " << (g[*first]).label << endl;
-//
-//        bool inserted = false;
-//        Graph::edge_descriptor e;
-//
-//        boost::tie(e, inserted) = add_edge(*first, sink_node, g);
-//        g[e].zero_one = 1;
-//    }
-//    for (auto first = V_sink_zero_edge.begin(), last = V_sink_zero_edge.end(); first != last; ++first) {
-//        cout << "ZERO-EDGE to the sink node was added. From " << (g[*first]).label << endl;
-//
-//        bool inserted = false;
-//        Graph::edge_descriptor e;
-//
-//        boost::tie(e, inserted) = add_edge(*first, sink_node, g);
-//        g[e].zero_one = 0;
-//    }
-
     //SECTION: transformation of the graph to NZDD
 
     // In this part we have to iterate over all edges and assign their parent's label to them.
     //NOTE: Only one-edges, get their parent's label and 0 (or empty set) will be assigned to zero-edges.
 
-    //SECTION: calculating the m_e for each edge using dynamic programming
+    //SECTION: calculating the m_e for each edge using dynamic programming.
+
+    // Actually the calculation is done implicitly in the graph construction and we just print it here.
     std::pair<boost::adjacency_list<>::vertex_iterator,
     boost::adjacency_list<>::vertex_iterator> vs = boost::vertices(g);
 
@@ -148,7 +137,162 @@ int main(int argc, char *argv[]){
         g[(*v_itr)].parent_branch_instruction << " is: " << g[(*v_itr)].path_count << endl;
     }
 
+    //SECTION: LP problem set-up
+
+    // the following variable denotes the rho in the draft.
+    float optimal_soft_margin; // rho
+
+    // this maps keeps base hypotheses associated weights. Key is the index of base hypothesis and the value is its
+    // weight.
+    map<int, float> base_hypotheses_weights;
+
+    // ------------------------------------------------------------------------------------------
+    try{
+        // Create new environment
+        GRBEnv env = GRBEnv();
+
+        // starting the environment
+        env.start();
+
+        // create an empty optimization model
+        GRBModel model = GRBModel(env);
+
+        // setting feasibility tolerance
+        model.set(GRB_DoubleParam_OptimalityTol, eps);
+
+
+        //variables
+
+        // rho
+        auto optimal_soft_margin = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+
+        //base_hypotheses_weights
+        map<int, GRBVar> base_hypotheses_weights;
+        for (j=1; j<=number_of_base_hypotheses; j++){
+//            base_hypotheses_weights.push_back(model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS));
+            base_hypotheses_weights[j] = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+        }
+
+        // map for z variables and their corresponding vertex descriptors
+        map<Graph::vertex_descriptor, GRBVar> weight_distance_to_root;
+
+        for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
+            //todo: is it right? no correspondence with weight? probably spread through z_root.
+            weight_distance_to_root[V_global[index]] = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+        }
+
+
+        //bias
+        auto bias = model.addVar(- GRB_INFINITY,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+
+        //setting objective
+        GRBLinExpr objective = 0;
+
+        // adding the rho to the objective
+        objective += optimal_soft_margin;
+
+        //TODO:
+        // Done ---- 1. to calculate nu, we need the number of samples to multiply by some percentage. How to get the number
+        // of samples from a ZDD structure?
+        // TODO: 2. is there a difference between zero or one edges? Why were we cautious about them in the first place?
+        // TODO: 3. How to get the z_leaf? How to get z since they are minimum of a weight sum, coming from different paths.
+        //  Shall I use dynamic programming?
+            // note: To accomplish the above, we need to perform a dynamic programming on all nodes to obtain z for each node.
+            //  question: What to put for empty edges? I need to put a weight for them in order to calculate z through the path.
+        // TODO: 4. Incorporate both positive and negative labeled data for this part.
+        // TODO: 5. I would need a map with key being source and target nodes and value being the corresponding edge descriptor.
+        // TODO: 6. In addition there's also a need for incorporating a map of which keys are base hypothesis and its
+        //  keys are their weights
+
+        // nu
+        float nu = 1;
+
+        model.update();
+
+
+        // adding the minus term: (-1/nu)*(sum(m_e * beta_e)) for each edge
+        for (j=0; j<number_of_base_hypotheses; j++){
+            objective +=  base_hypotheses_weights[j];
+        }
+        model.setObjective(objective, GRB_MAXIMIZE);
+        //model.addVars(-1*GRB_INFINITY, GRB_INFINITY, c, GRB_CONTINUOUS, NULL, 10);
+        //model.addVars(-1, 1, c, GRB_CONTINUOUS, NULL, 10);
+        //GRBLinExpr expr = new GRBLinExpr();
+        //expr = x[1] + x[2];
+        //expr->addTerms(c,x,10);
+        //expr->addTerms(1.0, x[0],1); //expr.addTerms(2.0, x[1],1);
+
+
+        model.update();
+
+
+        //constraints
+        auto cnstr =std::vector<GRBConstr>{};
+        GRBLinExpr lhs = 0;
+
+        // simplex constraint
+        //for (i=0; i<number_of_samples; i++){ expr +=x[i]; }
+        //cnstr.push_back(model.addConstr(expr, GRB_EQUAL, 1.0));
+
+        //constraints for instances
+        for (i=0; i< number_of_samples; i++){
+            lhs = 0;
+            for (k=0; k<instances[i].size(); k++){ lhs += labels[i] * base_hypotheses_weights[instances[i][k]]; }
+            lhs += labels[i]*bias;
+            cnstr.push_back(model.addConstr(lhs, GRB_GREATER_EQUAL, 1.0));
+        }
+
+        model.update();
+
+
+
+        //optimization
+        model.optimize();
+
+        //show results
+        cout << "optval=" << model.get(GRB_DoubleAttr_ObjVal) <<endl;
+
+        cout  << "base_hypotheses_weights={ ";
+        for (j=0; j<number_of_base_hypotheses; j++){
+            cout << base_hypotheses_weights[j].get(GRB_DoubleAttr_X) << " ";
+        }
+        cout << " }" << endl;
+
+        cout << "bias=" << bias.get(GRB_DoubleAttr_X) << endl;
+
+
+        //double xvals[] = model.get(GRB_DoubleAttr_X, model.getVars());
+        //double xvals[] = model.get(GRB_DoubleAttr_X);
+        /*
+        cout  << "d={ ";
+          for (i=0; i<number_of_samples; i++){
+        cout << x[i].get(GRB_DoubleAttr_X) << " ";
+          }
+        cout << " }" << endl;
+        cout <<"gamma=" << x[number_of_samples].get(GRB_DoubleAttr_X) << endl;
+        double bias = -1 * cnstr[1].get(GRB_DoubleAttr_Pi);
+        cout << "bias="  << bias <<endl;
+        std::vector<double> alpha;
+        alpha.resize(number_of_base_hypotheses);
+        for (j=0; j<number_of_base_hypotheses; j++){
+          alpha[j]= -1* cnstr[j+2].get(GRB_DoubleAttr_Pi);
+          cout << "alpha_" <<"j=" << alpha[j] <<endl;
+        }
+        */
+
+    }catch(GRBException e) {
+        cout << "Error code = " << e.getErrorCode() << endl;
+        cout << e.getMessage() << endl;
+    } catch (...) {
+        cout << "Error during optimization" << endl;
+    }
+
+    // ------------------------------------------------------------------------------------------
+
+    //SECTION: Done :) --------
     cout << "Program Finished!" << endl;
+    cout << number_of_base_hypotheses << endl;
+    cout << number_of_samples << endl;
 
     return 0;
 
