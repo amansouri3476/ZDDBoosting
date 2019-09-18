@@ -58,13 +58,33 @@ typedef boost::graph_traits<Graph>::vertex_descriptor Node;
 std::map<int, Graph::vertex_descriptor> V_global;
 //std::map<int, Graph::vertex_descriptor> V;
 
+// /////////////////////// GUROBI GLOBALS
+
+//variables
+
+// the following variable denotes the rho in the draft.
+GRBVar optimal_soft_margin; // rho
+
+// this maps keeps base hypotheses associated weights. Key is the index of base hypothesis and the value is its
+// weight.
+map<int, GRBVar> base_hypotheses_weights;
+
+// this map keeps the slack variables for all of edges
+map<Graph::edge_descriptor, GRBVar> edge_slack_variables;
+
+// map for z variables and their corresponding vertex descriptors
+map<Graph::vertex_descriptor, GRBVar> weight_distance_to_root;
+
+//constraints
+auto constraints =std::vector<GRBConstr>{};
+
+// GUROBI GLOBALS ///////////////////////
 
 map<int, vector<int>> get_input(std::string filename, std::vector<std::vector<int>>& instances, std::vector<int> & labels,  int* number_of_samples, int* number_of_base_hypotheses);
 
 void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& vertices,
-        vector<Graph::vertex_descriptor>& v_sink_one, vector<Graph::vertex_descriptor>& v_sink_zero,
         map<int, vector<int>> branch_instructions, int branch_instruction_number, int parent_branch_instruction_number,
-        int zero_one);
+        int zero_one, GRBModel& grb_model);
 
 int main(int argc, char *argv[]){
 
@@ -112,7 +132,9 @@ int main(int argc, char *argv[]){
 
 
     // recursively constructing the graph
-    graph_recursive_construct(g, V,V_sink_one_edge, V_sink_zero_edge, branch_instructions, last_instruction_number, 0, 0); // Fourth element is the pointer to the desired
+
+    /// *************************************************
+//    graph_recursive_construct(g, V, branch_instructions, last_instruction_number, 0, 0, grb_model); // Fourth element is the pointer to the desired
 
     // when the above command is executed, graph is constructed along with its one and zero edges. Just edges to the
     // sink node remain to be added. next step is to do the topological sorting. BUT I don't think that the sorting is
@@ -128,23 +150,34 @@ int main(int argc, char *argv[]){
 
     //SECTION: calculating the m_e for each edge using dynamic programming.
 
-    // Actually the calculation is done implicitly in the graph construction and we just print it here.
-    std::pair<boost::adjacency_list<>::vertex_iterator,
-    boost::adjacency_list<>::vertex_iterator> vs = boost::vertices(g);
+    /// *************************************************
 
-    for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
-        cout << "m_e for node #" << g[(*v_itr)].label << " from parent branch instruction #" <<
-        g[(*v_itr)].parent_branch_instruction << " is: " << g[(*v_itr)].path_count << endl;
-    }
+//    // Actually the calculation is done implicitly in the graph construction and we just print it here.
+//    std::pair<boost::adjacency_list<>::vertex_iterator,
+//    boost::adjacency_list<>::vertex_iterator> vs = boost::vertices(g);
+//
+//    for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
+//        cout << "m_e for node #" << g[(*v_itr)].label << " from parent branch instruction #" <<
+//        g[(*v_itr)].parent_branch_instruction << " is: " << g[(*v_itr)].path_count << endl;
+//    }
 
     //SECTION: LP problem set-up
 
-    // the following variable denotes the rho in the draft.
-    float optimal_soft_margin; // rho
+    //TODO:
+    // Done ---- 1. to calculate nu, we need the number of samples to multiply by some percentage. How to get the number
+    // of samples from a ZDD structure?
+    // TODO: 2. is there a difference between zero or one edges? Why were we cautious about them in the first place?
+    // TODO: 3. How to get the z_leaf? How to get z since they are minimum of a weight sum, coming from different paths.
+    //  Shall I use dynamic programming?
+    // note: To accomplish the above, we need to perform a dynamic programming on all nodes to obtain z for each node.
+    //  question: What to put for empty edges? I need to put a weight for them in order to calculate z through the path.
+    // TODO: 4. Incorporate both positive and negative labeled data for this part.
+    // TODO: 5. I would need a map with key being source and target nodes and value being the corresponding edge descriptor.
+    // TODO: 6. In addition there's also a need for incorporating a map of which keys are base hypothesis and its
+    //  keys are their weights
+    // note: Also slack variables should be declared and included in the constraints upon the recursive construction
+    //  of the graph.
 
-    // this maps keeps base hypotheses associated weights. Key is the index of base hypothesis and the value is its
-    // weight.
-    map<int, float> base_hypotheses_weights;
 
     // ------------------------------------------------------------------------------------------
     try{
@@ -160,49 +193,38 @@ int main(int argc, char *argv[]){
         // setting feasibility tolerance
         model.set(GRB_DoubleParam_OptimalityTol, eps);
 
-
-        //variables
+        // variables
 
         // rho
-        auto optimal_soft_margin = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+        optimal_soft_margin = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
 
-        //base_hypotheses_weights
-        map<int, GRBVar> base_hypotheses_weights;
-        for (j=1; j<=number_of_base_hypotheses; j++){
+        // base_hypotheses_weights
+        for (int j=1; j<=number_of_base_hypotheses; j++){
 //            base_hypotheses_weights.push_back(model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS));
             base_hypotheses_weights[j] = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
         }
 
-        // map for z variables and their corresponding vertex descriptors
-        map<Graph::vertex_descriptor, GRBVar> weight_distance_to_root;
-
-        for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
+//        for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
+//            weight_distance_to_root[V_global[index]] = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+//        }
+        for (int index=2; index <= number_of_samples; ++index){
             //todo: is it right? no correspondence with weight? probably spread through z_root.
             weight_distance_to_root[V_global[index]] = model.addVar(0,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
         }
 
+        // for root, this distance is zero.
+        //todo: Is this correct?
+        weight_distance_to_root[V_global[number_of_samples+1]] = model.addVar(0,  0, 0,  GRB_CONTINUOUS);;
 
         //bias
         auto bias = model.addVar(- GRB_INFINITY,  GRB_INFINITY, 0,  GRB_CONTINUOUS);
+
 
         //setting objective
         GRBLinExpr objective = 0;
 
         // adding the rho to the objective
         objective += optimal_soft_margin;
-
-        //TODO:
-        // Done ---- 1. to calculate nu, we need the number of samples to multiply by some percentage. How to get the number
-        // of samples from a ZDD structure?
-        // TODO: 2. is there a difference between zero or one edges? Why were we cautious about them in the first place?
-        // TODO: 3. How to get the z_leaf? How to get z since they are minimum of a weight sum, coming from different paths.
-        //  Shall I use dynamic programming?
-            // note: To accomplish the above, we need to perform a dynamic programming on all nodes to obtain z for each node.
-            //  question: What to put for empty edges? I need to put a weight for them in order to calculate z through the path.
-        // TODO: 4. Incorporate both positive and negative labeled data for this part.
-        // TODO: 5. I would need a map with key being source and target nodes and value being the corresponding edge descriptor.
-        // TODO: 6. In addition there's also a need for incorporating a map of which keys are base hypothesis and its
-        //  keys are their weights
 
         // nu
         float nu = 1;
@@ -215,31 +237,44 @@ int main(int argc, char *argv[]){
             objective +=  base_hypotheses_weights[j];
         }
         model.setObjective(objective, GRB_MAXIMIZE);
-        //model.addVars(-1*GRB_INFINITY, GRB_INFINITY, c, GRB_CONTINUOUS, NULL, 10);
-        //model.addVars(-1, 1, c, GRB_CONTINUOUS, NULL, 10);
-        //GRBLinExpr expr = new GRBLinExpr();
-        //expr = x[1] + x[2];
-        //expr->addTerms(c,x,10);
-        //expr->addTerms(1.0, x[0],1); //expr.addTerms(2.0, x[1],1);
 
 
         model.update();
 
+        // constraint for the leaf node (sink node)
+        constraints.push_back(model.addConstr(weight_distance_to_root[V_global[1]], GRB_GREATER_EQUAL, optimal_soft_margin));
 
-        //constraints
-        auto cnstr =std::vector<GRBConstr>{};
         GRBLinExpr lhs = 0;
 
         // simplex constraint
         //for (i=0; i<number_of_samples; i++){ expr +=x[i]; }
         //cnstr.push_back(model.addConstr(expr, GRB_EQUAL, 1.0));
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        graph_recursive_construct(g, V, branch_instructions, last_instruction_number, 0, 0, model); // Fourth element is the pointer to the desired
+
+        // Actually the calculation is done implicitly in the graph construction and we just print it here.
+        std::pair<boost::adjacency_list<>::vertex_iterator,
+        boost::adjacency_list<>::vertex_iterator> vs = boost::vertices(g);
+
+        for (boost::adjacency_list<>::vertex_iterator v_itr = vs.first; v_itr != vs.second; ++v_itr){
+            cout << "m_e for node #" << g[(*v_itr)].label << " from parent branch instruction #" <<
+                 g[(*v_itr)].parent_branch_instruction << " is: " << g[(*v_itr)].path_count << endl;
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
         //constraints for instances
         for (i=0; i< number_of_samples; i++){
             lhs = 0;
             for (k=0; k<instances[i].size(); k++){ lhs += labels[i] * base_hypotheses_weights[instances[i][k]]; }
             lhs += labels[i]*bias;
-            cnstr.push_back(model.addConstr(lhs, GRB_GREATER_EQUAL, 1.0));
+            constraints.push_back(model.addConstr(lhs, GRB_GREATER_EQUAL, 1.0));
         }
 
         model.update();
@@ -412,9 +447,8 @@ map<int, vector<int>> get_input(std::string filename, std::vector<vector<int>>& 
 }
 
 void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& vertices_descriptors,
-        vector<Graph::vertex_descriptor>& v_sink_one, vector<Graph::vertex_descriptor>& v_sink_zero,
         map<int, vector<int>> branch_instructions, int branch_instruction_number, int parent_branch_instruction_number,
-        int zero_one){
+        int zero_one, GRBModel& grb_model){
 
     cout << "Node index: " << (branch_instructions[branch_instruction_number]).at(0) << "\tZero-edge: " <<
     (branch_instructions[branch_instruction_number]).at(1) << "\tOne-edge: " <<
@@ -449,7 +483,8 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
         cout << "Node " << g[temporary_descriptor].label << " for branch instruction #" << branch_instruction_number <<
         " was added." << endl;
 
-        // connecting this node to its parent and inheriting the path count from the parent
+        // connecting this node to its parent and inheriting the path count from the parent and adding the corresponding
+        // constraint.
         if (parent_branch_instruction_number == 0){// i.e. the node is a root itself and no edge to parent is required.
             // path count is initialized to 1.
             g[V_global[branch_instruction_number]].path_count = 1;
@@ -459,6 +494,8 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
             //NOTE: Only add and inherit the path_count from the parent if they are connected by a one-edge.
             //TODO: What to do for zero-edges? For now I'll add for both zero and one edges since I don't see any
             // difference
+            //NOTE: Also at this stage, constraint will be added for this pair of nodes and edge connecting them to
+            // each other.
 
             bool inserted = false;
             Graph::edge_descriptor e;
@@ -469,6 +506,22 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
 
             g[V_global[branch_instruction_number]].path_count = g[V_global[parent_branch_instruction_number]].path_count;
 
+            ///////////////// Constraint
+
+            // constraint for this two node
+            GRBLinExpr lhs = weight_distance_to_root[V_global[branch_instruction_number]];
+            // todo: for negative labeled data there's a slight change. (plus changes to minus)
+
+            if(zero_one == 1){
+                GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]] +
+                                 base_hypotheses_weights[(branch_instructions[parent_branch_instruction_number]).at(0)];
+
+                constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
+            } else{
+                GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]];
+
+                constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
+            }
 
         }
 
@@ -490,7 +543,7 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
                 // case 2
             else {
                 //TODO::DONE Add to sink_descriptors
-                v_sink_zero.push_back(temporary_descriptor);
+//                v_sink_zero.push_back(temporary_descriptor);
 
                 // Adding the zero-edge to the sink node
                 cout << "ZERO-EDGE to the sink node was added. From branch instruction #" <<
@@ -504,6 +557,17 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
 
                 //NOTE: If entered this if, no return should be invoked! Other if and else have to be completed! Simply
                 // nothing should be happened according to these nodes.
+
+                ///////////////// Constraint for connection to sink node with a ZERO edge
+
+                // constraint for this two node
+                GRBLinExpr lhs = weight_distance_to_root[V_global[1]];
+                // todo: for negative labeled data there's a slight change. (plus changes to minus)
+
+                    GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]];
+
+                    constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
+
             }
             // if goes to the following else, it means that recursion must be continued for zero-edge.
         }
@@ -520,8 +584,8 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
 //            std::cout<< "connecting node #" << g[temporary_descriptor].label << " to the node (ZERO-EDGE) #" << g[temporary_descriptor_zero_child].label << std::endl;
 //            g[e].zero_one = 0;
 
-            graph_recursive_construct(g, vertices_descriptors, v_sink_one, v_sink_zero, branch_instructions,
-                    zero_child_instruction_number, branch_instruction_number, 0);
+            graph_recursive_construct(g, vertices_descriptors, branch_instructions,
+                    zero_child_instruction_number, branch_instruction_number, 0, grb_model);
         }
 
         // 1. if the one-child is zero, do nothing and leave recursion and the descendant.
@@ -538,7 +602,7 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
                 // case 2
             else {
                 //TODO::DONE Add to sink_descriptors
-                v_sink_one.push_back(temporary_descriptor);
+//                v_sink_one.push_back(temporary_descriptor);
 
                 // Adding the zero-edge to the sink node
                 cout << "ONE-EDGE to the sink node was added. From branch instruction #" <<
@@ -553,6 +617,16 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
                 //NOTE: If entered this if, no return should be invoked! Other if and else have to be completed! Simply
                 // nothing should be happened according to these nodes.
 
+                ///////////////// Constraint for connection to sink node with a ONE edge
+
+                // constraint for this two node
+                GRBLinExpr lhs = weight_distance_to_root[V_global[branch_instruction_number]];
+                // todo: for negative labeled data there's a slight change. (plus changes to minus)
+
+                GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]] +
+                                 base_hypotheses_weights[(branch_instructions[parent_branch_instruction_number]).at(0)];
+
+                constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
 
             }
             // if goes to the following else, it means that recursion must be continued for one-edge.
@@ -580,8 +654,8 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
 //            std::cout<< "connecting node #" << g[temporary_descriptor].label << " to the node (ONE-EDGE) #" << g[temporary_descriptor_one_child].label << std::endl;
 //            g[e].zero_one = 1;
 
-            graph_recursive_construct(g, vertices_descriptors, v_sink_one, v_sink_zero, branch_instructions,
-                    one_child_instruction_number, branch_instruction_number, 1);
+            graph_recursive_construct(g, vertices_descriptors, branch_instructions,
+                    one_child_instruction_number, branch_instruction_number, 1, grb_model);
         }
     } else{ // observed before
         cout << "EDGE ADDED FOR THE OBSERVED NODE #" << g[V_global[branch_instruction_number]].label <<
@@ -595,6 +669,23 @@ void graph_recursive_construct(Graph& g, vector<Graph::vertex_descriptor>& verti
 
         // updating its path count
         g[V_global[branch_instruction_number]].path_count += g[V_global[parent_branch_instruction_number]].path_count;
+
+        ///////////////// Constraint
+
+        // constraint for this two node
+        GRBLinExpr lhs = weight_distance_to_root[V_global[branch_instruction_number]];
+        // todo: for negative labeled data there's a slight change. (plus changes to minus)
+
+        if(zero_one == 1){
+            GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]] +
+                             base_hypotheses_weights[(branch_instructions[parent_branch_instruction_number]).at(0)];
+
+            constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
+        } else{
+            GRBLinExpr rhs = weight_distance_to_root[V_global[parent_branch_instruction_number]];
+
+            constraints.push_back(grb_model.addConstr(lhs, GRB_LESS_EQUAL, rhs));
+        }
 
     }
 
